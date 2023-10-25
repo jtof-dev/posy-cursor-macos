@@ -66,3 +66,13 @@ The following cursors are missing because they are unique to MacOS, so Posy's Cu
 - Copy Drag
 
 - Pointing
+
+## To Do
+
+- [ ] Fix jumping animation on `Busy` and `Wait`
+
+- [ ] Make missing cursors
+
+  - [ ] Make two `.capes` - one with default cursor and other with custom cursors
+
+- [ ] Add pics/gifs to `README.md` to show the cursors in `Mousecape`
