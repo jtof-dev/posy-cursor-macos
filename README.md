@@ -22,8 +22,12 @@ And run with:
 Using `ImageMagick`, convert the `.ico`s to `.png`s and stack them (source: [macrumors](https://forums.macrumors.com/threads/mousescape-0-0-5-1579.2061866/))
 
 ```
-magick morgify -format png *.ico
+magick mogrify -format png *.ico
 magick convert * -append result.png
+```
+
+```
+magick convert input.cur output.png
 ```
 
 Assuming the `.ani` and `.ico` files are in a seperate folder by themselves
