@@ -63,9 +63,7 @@ The following cursors are missing because they are unique to MacOS, so Posy's Cu
 
 - Alias
 
-- Copy Drag
-
-- Pointing
+- Copy + Copy Drag
 
 ## To Do
 
