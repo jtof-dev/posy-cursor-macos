@@ -1,15 +1,46 @@
-# posy-improved-cursor-mousecape
-A repo containing the guts of Posy's Cursor for Windows along with a Mousecape-compatible `.cape`
+# Posy's Cursor for MacOS
+
+[Posy's Improved Cursors](http://www.michieldb.nl/other/cursors/) ported to MacOS for [Mousecape](https://github.com/alexzielenski/Mousecape/releases)
+
+<table>
+  <tr>
+    <td><img src="assets/posy-cursor/posy-cursor-2.png"  alt="A table of Posy's Cursors"></td>
+    <td><img src="assets/posy-wait-max-96/2/24/gif/output.gif"></td>
+    <td><img src="assets/posy-background-max-96/2/24/gif/output.gif"></td>
+    <td><img src="assets/posy-help/posy-help-2.png"></td>
+    <td><img src="assets/posy-hand/posy-hand-2.png"></td>
+    <td><img src="assets/posy-forbidden/posy-forbidden-2.png"></td>
+    <td><img src="assets/posy-precise/posy-precise-2.png"></td>
+    <td><img src="assets/posy-beam/posy-beam-2.png"></td>
+    <td><img src="assets/posy-move/posy-move-2.png"></td>
+    <td><img src="assets/posy-size-ew/posy-size-ew-2.png"></td>
+    <td><img src="assets/posy-size-ns/posy-size-ns-2.png"></td>
+    <td><img src="assets/posy-size-nesw/posy-size-nesw-2.png"></td>
+    <td><img src="assets/posy-size-nwse/posy-size-nwse-2.png"></td>
+    <td><img src="assets/posy-alt/posy-alt-2.png"></td>
+    <td><img src="assets/posy-copy/copy-64.png"></td>
+  </tr>
+</table>
 
 ## Installation
 
-- To change your cursor in MacOS, use [Mousecape](https://github.com/alexzielenski/Mousecape/releases) (just unzip and install like normal)
+1. To change your cursor in MacOS, install [Mousecape](https://github.com/alexzielenski/Mousecape/releases) (just download the latest `.zip` and install)
 
-- Download [posy-cursor.cape](posy-cursor.cape) from this repo
+2. Download either [posy-cursor-original.cape](posy-cursor-original.cape) or [posy-cursor-with-copy.cape](posy-cursor-with-copy.cape)
 
-- Open `Mousecape`, hit `File` > `Import Cape` > select `posy-cursor.cape`
+3. Open `Mousecape`, hit `File` > `Import Cape` > select `posy-cursor.cape`
 
-## Some Stupid Tools
+## Changes I Made
+
+- Most of Posy's Cursors had roughly one-to-one drop-in replacements, but some don't quite fit
+
+- Out of all of them, the `posy-alt` (second from right above) had the worst fit - it ended up being used for MacOS's Alias cursor
+
+- Posy's Cursor pack didn't have a Copy Cursor, so I made a very simple one in GIMP (last cursor above)
+
+  - If you do / don't like this cursor, you can use `posy-cursor-with-copy.cape` or `posy-cursor-original` respectively (original just has the default cursor instead)
+
+## Some Stupid Tools I Used
 
 - I used a couple of pretty dumb tools to convert all the `.cur`, `.ani`, and `.ico` files into `.png`s to use with `Mousecape`
 
@@ -57,14 +88,14 @@ Assuming the `.ani` and `.ico` files are in a seperate folder by themselves
 
 - I wrote a very basic `for` bash script ([`animated-cursor.sh`](animated-cursor.sh)) to copy 24 of the `.png`s into a seperate folder before they get stacked (because MacOS only accepts 24fps animations)
 
-## Missing
+### Making a `.gif` for `README.md`
 
-The following cursors are missing because they are unique to MacOS, so Posy's Cursors don't already have a cursor for each. Either can be overwritten with the default cursor or through a photoshop job
+- I put the individual `.png` frames into a seperate folder, then ran the following to convert the `.png`s to a `.gif` with frame interval .095s:
 
-- Alias
-
-- Copy + Copy Drag
+```
+convert -alpha set -channel A -threshold 50% -background none -delay 9.5 -loop 0 *.png output.gif
+```
 
 ## Stuff I'm too lazy to implement
 
-- Half arrow cursors for resizing (see the [official Apple cursor images](https://support.apple.com/guide/mac-help/pointers-in-macos-mh35695/mac))
+- [ ] Half arrow cursors for resizing (see the [official Apple cursors](https://support.apple.com/guide/mac-help/pointers-in-macos-mh35695/mac))
