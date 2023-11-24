@@ -2,6 +2,8 @@
 
 [Posy's Improved Cursors](http://www.michieldb.nl/other/cursors/) ported to MacOS for [Mousecape](https://github.com/alexzielenski/Mousecape/releases)
 
+- Tested on a 2020 MBP running Sonoma 14
+
 <table>
   <tr>
     <td><img src="assets/posy-cursor/posy-cursor-2.png"  alt="A table of Posy's Cursors"></td>
@@ -24,7 +26,7 @@
 
 ## Installation
 
-1. To change your cursor in MacOS, install [Mousecape](https://github.com/alexzielenski/Mousecape/releases) (just download the latest `.zip` and install)
+1. To change your cursor in MacOS, install [Mousecape](https://github.com/alexzielenski/Mousecape/releases) (just download the latest `.zip` and install like normal)
 
 2. Download either [posy-cursor-original.cape](posy-cursor-original.cape) or [posy-cursor-with-copy.cape](posy-cursor-with-copy.cape)
 
@@ -96,6 +98,16 @@ Assuming the `.ani` and `.ico` files are in a seperate folder by themselves
 convert -alpha set -channel A -threshold 50% -background none -delay 9.5 -loop 0 *.png output.gif
 ```
 
-## Stuff I'm too lazy to implement
+## To Do
 
 - [ ] Half arrow cursors for resizing (see the [official Apple cursors](https://support.apple.com/guide/mac-help/pointers-in-macos-mh35695/mac))
+
+- [ ] Fix situations where the updated cursors aren't used
+
+  - [ ] When hovering over something to drag and drop, sometimes the default cursor appears until you click and drag
+
+  - [ ] Despite having the open / closed hand cursors replaced, they still sometimes appear (independant of the drag and drop problem above)
+
+  - [ ] When using [Universal Control](https://support.apple.com/en-us/HT212757) and moving the cursor from an iPad back to a Macbook, the cursor will be Mac-styled until clicking once
+
+  - These problems may be the result of `Mousecape` being too old and not including options for all current possible cursors, in which case what is here is the best we can get
